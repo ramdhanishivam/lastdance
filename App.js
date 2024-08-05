@@ -27,12 +27,12 @@ const styleCard = {
 
 }
 
-const RestaurantCard = (props) => {
+const RestaurantCard = ({resName, cusines}) => {
     return (
         <div className="restaurant-card" style={styleCard}>
-            <h3>{props.resName}</h3>
+            <h3>{resName}</h3>
             <img className="logo-image" src="https://img.freepik.com/free-photo/fruit-salad-spilling-floor-was-mess-vibrant-colors-textures-generative-ai_8829-2895.jpg" ></img>
-            <p>{props.cusines}</p>
+            <p>{cusines}</p>
             <p>4.9 stars</p>
             <p>39 minutes</p>
         </div>
