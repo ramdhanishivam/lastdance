@@ -22,11 +22,19 @@ const Header = () => {
     );
 }
 
+const styleCard = {
+    backgroundColor: "#fff8dc4a"
+
+}
+
 const RestaurantCard = () => {
     return (
-        <div className="restaurant-card">
+        <div className="restaurant-card" style={styleCard}>
             <h3>Gullu Dada Biryani</h3>
             <img className="logo-image" src="https://img.freepik.com/free-photo/fruit-salad-spilling-floor-was-mess-vibrant-colors-textures-generative-ai_8829-2895.jpg" ></img>
+            <p>Biryani Kebabs</p>
+            <p>4.9 stars</p>
+            <p>39 minutes</p>
         </div>
     );
 }
@@ -39,6 +47,12 @@ const Body = () => {
                 <button>Click to search</button>
             </div>
             <div className="restaurant-list">
+                <RestaurantCard></RestaurantCard>
+                <RestaurantCard></RestaurantCard>
+                <RestaurantCard></RestaurantCard>
+                <RestaurantCard></RestaurantCard>
+                <RestaurantCard></RestaurantCard>
+                <RestaurantCard></RestaurantCard>
                 <RestaurantCard></RestaurantCard>
                 <RestaurantCard></RestaurantCard>
                 <RestaurantCard></RestaurantCard>
