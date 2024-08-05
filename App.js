@@ -27,12 +27,12 @@ const styleCard = {
 
 }
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
     return (
         <div className="restaurant-card" style={styleCard}>
-            <h3>Gullu Dada Biryani</h3>
+            <h3>{props.resName}</h3>
             <img className="logo-image" src="https://img.freepik.com/free-photo/fruit-salad-spilling-floor-was-mess-vibrant-colors-textures-generative-ai_8829-2895.jpg" ></img>
-            <p>Biryani Kebabs</p>
+            <p>{props.cusines}</p>
             <p>4.9 stars</p>
             <p>39 minutes</p>
         </div>
@@ -47,16 +47,8 @@ const Body = () => {
                 <button>Click to search</button>
             </div>
             <div className="restaurant-list">
-                <RestaurantCard></RestaurantCard>
-                <RestaurantCard></RestaurantCard>
-                <RestaurantCard></RestaurantCard>
-                <RestaurantCard></RestaurantCard>
-                <RestaurantCard></RestaurantCard>
-                <RestaurantCard></RestaurantCard>
-                <RestaurantCard></RestaurantCard>
-                <RestaurantCard></RestaurantCard>
-                <RestaurantCard></RestaurantCard>
-                <RestaurantCard></RestaurantCard>
+                <RestaurantCard resName="Gullu Dada Biryani" cusines="Biryani Kebabs"></RestaurantCard>
+                <RestaurantCard resName="KFC" cusines="Burgers and fries"></RestaurantCard>
             </div>
         </div>
     );
