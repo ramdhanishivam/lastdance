@@ -9,8 +9,8 @@ const RestaurantCard = (props) => {
     const threeCuisines = cuisines.slice(0,3);
     return (
         <div className="restaurant-card" style={styleCard}>
-            <h3>{name}</h3>
             <img className="logo-image" src={ CDN_URL + cloudinaryImageId} ></img>
+            <h3>{name}</h3>
             <p>{threeCuisines.join(", ")}</p>
             <p>{avgRating} stars</p>
             <p>{costForTwo}</p>
