@@ -1,9 +1,20 @@
 import RestaurantCard from "./RestaruantCard";
 import { resList } from "../utils/mockData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { API_URL } from "../utils/constants";
 
 const Body = () => {
     const [listOfRes, setListOfRes] = useState(resList);
+
+    useEffect(()=>{
+        fetchData();
+    },[])
+
+    const fetchData = async () => {
+        const data = await fetch(API_URL);
+        const response = await data.json();
+        setListOfRes(response.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
+    }
     return (
         <div className="body">
             <div className="search-bar">
