@@ -4,10 +4,11 @@ import { API_URL } from "../utils/constants";
 
 const Body = () => {
     const [listOfRes, setListOfRes] = useState([]);
+    const [searchValue, setSearchValue] = useState("");
 
     useEffect(()=>{
         fetchData();
-    },[])
+    },[listOfRes])
 
     const fetchData = async () => {
         const data = await fetch(API_URL);
@@ -17,7 +18,14 @@ const Body = () => {
     return (
         <div className="body">
             <div className="search-bar">
-                <input type="text" placeholder="Enter the name"></input>
+                <input type="text" value={searchValue} onChange={(e) => {setSearchValue(e.target.value)}} onKeyUp={(e)=>{
+                    let givenInput = e.target.value;
+                    const filteredList = listOfRes.filter(
+                        (res) => {
+                            return givenInput && res.info.name.toUpperCase().includes(givenInput.toUpperCase()) == true;
+                        });
+                    setListOfRes(filteredList);
+                }} placeholder="Enter the name"></input>
                 <button>Click to search</button>
                 <button onClick={()=>{
                     const filteredList = listOfRes.filter(
