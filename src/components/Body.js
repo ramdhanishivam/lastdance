@@ -21,7 +21,7 @@ const Body = () => {
         <div className="body">
             <div className="search-bar">
                 <input type="text" value={searchValue} onChange={(e) => {setSearchValue(e.target.value)}} placeholder="Enter the name"></input>
-                <button onClick={(e)=>{
+                <button onClick={()=>{
                     let givenInput = searchValue;
                     const filteredList = listOfRes.filter(
                         (res) => {
