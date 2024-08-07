@@ -4,14 +4,14 @@ import "/app.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Body from "./components/Body";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./components/About";
 
 const AppLayout = () => {
     return (
         <>
         <Header></Header>
-        <Body></Body>
+        <Outlet></Outlet>
         <Footer></Footer>
     </>
     );
@@ -20,11 +20,17 @@ const AppLayout = () => {
 const appRouter = createBrowserRouter([
     {
         path: "/",
-        element: <AppLayout></AppLayout>
-    },
-    {
-        path: "/about",
-        element: <About></About>
+        element: <AppLayout></AppLayout>,
+        children: [
+            {
+                path: "/",
+                element: <Body></Body>
+            },
+            {
+                path: "/about",
+                element: <About></About>
+            },
+        ]
     }
 ])
 
