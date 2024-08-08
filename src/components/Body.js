@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaruantCard";
 import { useState, useEffect } from "react";
 import { API_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import { ShimmerSectionHeader } from "react-shimmer-effects";
 
 const Body = () => {
     const [listOfRes, setListOfRes] = useState([]);
@@ -18,7 +19,13 @@ const Body = () => {
         setListOfRes(response.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
         setFilterListOfRes(response.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
     }
+
     return (
+        filterListOfRes.length == 0 ? 
+        <div>
+            <ShimmerSectionHeader center />
+            <ShimmerSectionHeader center />
+        </div> :
         <div className="body">
             <div className="search-bar">
                 <input type="text" value={searchValue} onChange={(e) => {setSearchValue(e.target.value)}} placeholder="Enter the name"></input>
