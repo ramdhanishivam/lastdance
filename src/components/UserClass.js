@@ -1,6 +1,5 @@
 import React from "react";
 
-
 class UserClassChild extends React.Component {
     constructor() {
         super();
