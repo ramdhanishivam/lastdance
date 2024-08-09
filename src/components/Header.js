@@ -29,7 +29,7 @@ const Header = () => {
 const Internet = () => {
     const internetStatus = useInternetStatus();
     return (
-        internetStatus ? <div>{'✅'}</div> : <h3>{'🛑'}</h3>
+        internetStatus ? <div>{"Online " + '✅'}</div> : <h3>{"Offline "+'🛑'}</h3>
     );
 }
 
