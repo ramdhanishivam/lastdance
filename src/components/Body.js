@@ -3,15 +3,21 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ShimmerSectionHeader } from "react-shimmer-effects";
 import useRestaurantListData from "../utils/useRestaurantListData";
+import useInternetStatus from "../utils/useInternetStatus";
 
 const Body = () => {
     const listOfRes = useRestaurantListData();
     const [filterListOfRes, setFilterListOfRes] = useState([]);
     const [searchValue, setSearchValue] = useState("");
+    const internetStatus = useInternetStatus();
     
     useEffect(() => {
         setFilterListOfRes(listOfRes);
     },[listOfRes])
+
+    if(internetStatus === false){
+        return <h3>No Internet</h3>;
+    }
 
     return (
         filterListOfRes.length == 0 ? 

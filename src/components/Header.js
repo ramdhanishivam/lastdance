@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useInternetStatus from "../utils/useInternetStatus";
 
 const Header = () => {
     const [loginOrLogout, setLoginOrLogout] = useState("Login");
@@ -11,6 +12,7 @@ const Header = () => {
             </div>
             <div className="navigation-items">
                 <ul>
+                    <li><Internet></Internet></li>
                     <li><Link to="/about">About us</Link></li>
                     <li><Link to="/">Home</Link></li>
                     <li>Contact Us</li>
@@ -21,6 +23,13 @@ const Header = () => {
                 </ul>
             </div>
         </div>
+    );
+}
+
+const Internet = () => {
+    const internetStatus = useInternetStatus();
+    return (
+        internetStatus ? <div>{'✅'}</div> : <h3>{'🛑'}</h3>
     );
 }
 
