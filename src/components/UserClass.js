@@ -51,6 +51,13 @@ class UserClass extends React.Component {
 
         componentDidMount() {
             console.log("parent componentDidMount called")
+            this.setState = {
+                color: "yellow"
+            }
+        }
+
+        componentDidUpdate() {
+            console.log("parent componentDidUpdate called")
         }
 
         componentWillUnmount() {
