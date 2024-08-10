@@ -12,7 +12,7 @@ class UserClassChild extends React.Component {
     render() {
         console.log("UserClassChild render called")
         return (
-            <div>UserClassChild Render</div>
+            <div>Developer from India</div>
         );
     }
 }
@@ -30,7 +30,7 @@ class UserClassChild2 extends React.Component {
     render() {
         console.log("UserClassChild2 render called")
         return (
-            <div>UserClassChild2 Render</div>
+            <div>ramdhanishivam7678@gmail.com</div>
         );
     }
 }

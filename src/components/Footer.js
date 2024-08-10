@@ -1,8 +1,8 @@
 const Footer = () => {
     return  (
-        <div className="footer">
+        <div className="font-extralight">
             <div className="footer-items">
-                <ul>
+                <ul className="flex justify-between p-3 m-4 bg-slate-50 border-4">
                     <li>Instagram</li>
                     <li>Query Form</li>
                     <li>Contact Us</li>

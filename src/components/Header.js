@@ -6,20 +6,20 @@ import useInternetStatus from "../utils/useInternetStatus";
 const Header = () => {
     const [loginOrLogout, setLoginOrLogout] = useState("Login");
     return (
-        <div className="header">
-            <div className="logo-container">
-                <a><img className="logo-image" src={LOGO_URL} ></img></a>
+        <div className="flex justify-between p-3 m-4 bg-slate-50 border-4">
+            <div className="">
+                <a><img className="w-16 rounded-2xl" src={LOGO_URL} ></img></a>
             </div>
-            <div className="navigation-items">
-                <ul>
-                    <li><Internet></Internet></li>
-                    <li><Link to="/about">About us</Link></li>
-                    <li><Link to="/">Home</Link></li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                    <button className="login-button" onClick={(e) => {
+            <div className="">
+                <ul className="flex list-none font-extralight">
+                    <li className="p-3 m-4"><Internet></Internet></li>
+                    <li className="p-3 m-4"><Link to="/about">About us</Link></li>
+                    <li className="p-3 m-4"><Link to="/">Home</Link></li>
+                    <li className="p-3 m-4">Contact Us</li>
+                    <li className="p-3 m-4">Cart</li>
+                    <li className="p-3 m-4"><button className="border-2 w-16" onClick={(e) => {
                         e.target.innerHTML == "Login" ? setLoginOrLogout("Logout") : setLoginOrLogout("Login")
-                    }}>{loginOrLogout}</button>
+                    }}>{loginOrLogout}</button></li>
                 </ul>
             </div>
         </div>
